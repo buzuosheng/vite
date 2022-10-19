@@ -273,9 +273,8 @@ export function resolveBuildOptions(
   isBuild: boolean,
   logger: Logger
 ): ResolvedBuildOptions {
-  const deprecatedPolyfillModulePreload = raw?.polyfillModulePreload
   if (raw) {
-    const { polyfillModulePreload, ...rest } = raw
+    const { polyfillModulePreload: deprecatedPolyfillModulePreload, ...rest } = raw
     raw = rest
     if (deprecatedPolyfillModulePreload !== undefined) {
       logger.warn(
